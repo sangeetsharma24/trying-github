@@ -1,0 +1,33 @@
+#include <stdio.h>
+int candy(int, int);
+int main()
+{
+//this is the solution of one of the questions of my end semester examinations.
+    int a, b, c, d;
+   printf("enter total money = ");
+   scanf("%d", &a);
+   printf("\nenter price = ");
+   scanf("%d", &b);
+   printf("\nenter wrappers = ");
+   scanf("%d", &c);
+   
+   d = a/b;
+   
+   int p = candy(d,c);
+   
+   printf("\n\ntotal no. of candies are %d", p+d);
+   
+    return 0;
+}
+
+int candy(int p, int q)
+{
+    int a;
+  do{
+    int a = p/q + candy(a + p-p/q,q);
+  }
+  while((a+p-q)<!q);
+  return a;
+    
+    
+    }
